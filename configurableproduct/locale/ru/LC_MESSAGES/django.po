@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-20 17:04+0400\n"
+"POT-Creation-Date: 2011-05-23 10:40+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,12 +63,12 @@ msgid "Ordering"
 msgstr "Порядок"
 
 #: models/fields/boolean_field.py:11
-msgid "Product boolean field"
-msgstr "Логическое поле продукта"
+msgid "Product field - boolean"
+msgstr "Поле продукта - логическое"
 
 #: models/fields/boolean_field.py:12
-msgid "Product boolean fields"
-msgstr "Логические поля продукта"
+msgid "Product fields - boolean"
+msgstr "Поля продукта - логические"
 
 #: models/fields/boolean_field.py:18
 msgid "Boolean fields"
@@ -86,37 +86,40 @@ msgid "Field"
 msgstr "Файл"
 
 #: models/fields/char_field.py:11
-msgid "Product char field"
-msgstr "Текстовое поле продукта"
+msgid "Product field - char"
+msgstr "Поле продукта - строка"
 
 #: models/fields/char_field.py:12
-msgid "Product char fields"
-msgstr "Текстовые поля продукта"
+msgid "Product fields - char"
+msgstr "Поля продукта - строковые"
 
 #: models/fields/char_field.py:18
 msgid "Char fields"
-msgstr "Текстовые поля"
+msgstr "Строковые поля"
 
 #: models/fields/float_field.py:11
-msgid "Product float field"
-msgstr "Числовое поле продукта"
+msgid "Product field - float"
+msgstr "Поле продукта - числовое"
 
 #: models/fields/float_field.py:12
-msgid "Product float fields"
-msgstr "Числовые поля продукта"
+msgid "Product fields - float"
+msgstr "Поля продукта - числовые"
 
 #: models/fields/float_field.py:19
 msgid "Float fields"
 msgstr "Числовые поля"
 
-#: models/fields/image_field.py:24 models/fields/image_field.py:31
-#: models/fields/image_field.py:32
-msgid "Product image field"
-msgstr "Поле изображений продукта"
+#: models/fields/image_field.py:24
+msgid "Product field - image"
+msgstr "Поле продукта - изображение"
 
 #: models/fields/image_field.py:25
-msgid "Product image fields"
-msgstr "Поля изображений продукта"
+msgid "Product fields - image"
+msgstr "Поля продукта - изображения"
+
+#: models/fields/image_field.py:31 models/fields/image_field.py:32
+msgid "Product image field"
+msgstr "Поле изображений продукта"
 
 #: models/fields/image_field.py:35
 msgid "Description"
@@ -129,6 +132,18 @@ msgstr "Файл"
 #: models/fields/image_field.py:47
 msgid "Thumbnail"
 msgstr "Миниатюра"
+
+#~ msgid "Product boolean fields"
+#~ msgstr "Логические поля продукта"
+
+#~ msgid "Product float field"
+#~ msgstr "Числовое поле продукта"
+
+#~ msgid "Product float fields"
+#~ msgstr "Числовые поля продукта"
+
+#~ msgid "Product image fields"
+#~ msgstr "Поля изображений продукта"
 
 #~ msgid "Product text field"
 #~ msgstr "Текстовое поле продукта"

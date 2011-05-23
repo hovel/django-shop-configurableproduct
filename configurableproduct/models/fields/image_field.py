@@ -21,8 +21,8 @@ def get_file_path(instance, filename):
 
 class ProductImageField(ProductAbstractField):
     class Meta(object):
-        verbose_name = _('Product image field')
-        verbose_name_plural = _('Product image fields')
+        verbose_name = _('Product field - image')
+        verbose_name_plural = _('Product fields - image')
         app_label = 'configurableproduct'
 
 

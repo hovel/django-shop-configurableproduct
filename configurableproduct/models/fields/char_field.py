@@ -8,8 +8,8 @@ from django.utils.translation import ugettext_lazy as _
 
 class ProductCharField(ProductAbstractField):
     class Meta(object):
-        verbose_name = _('Product char field')
-        verbose_name_plural = _('Product char fields')
+        verbose_name = _('Product field - char')
+        verbose_name_plural = _('Product fields - char')
         app_label = 'configurableproduct'
 
 class ProductChar(ProductAbstractFieldThrough):
