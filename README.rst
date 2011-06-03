@@ -29,3 +29,5 @@ How to use it
 
    product_object.productchar_set.all()[0].value
 
+* You can access ordered list of custom fields via `product_object.field_list` property
+

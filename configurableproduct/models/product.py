@@ -42,3 +42,12 @@ class CProduct(Product):
                 if not self_field.through.objects.filter(field=tf, product=self).count():
                     pt = self_field.through(product=self, field=tf)
                     pt.save()
+
+    @property
+    def field_list(self):
+        fields = list(self.productchar_set.all()) +\
+                 list(self.productfloat_set.all()) +\
+                 list(self.productboolean_set.all()) +\
+                 list(self.productimage_set.all())
+        fields.sort(key=lambda f: f.order)
+        return fields
