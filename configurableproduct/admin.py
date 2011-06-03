@@ -43,7 +43,6 @@ class ProductTypeAdmin(admin.ModelAdmin):
     fieldsets = (
     ('', {'fields': ['name', 'char_fields', 'float_fields', 'boolean_fields', 'image_fields']}),
     )
-    inlines = [ProductCharInline, ProductBooleanInline, ProductFloatInline, ProductImageInline]
     list_per_page = 100
     list_display = ('name',)
     search_fields = ('name',)
