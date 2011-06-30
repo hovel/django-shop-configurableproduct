@@ -4,7 +4,7 @@ import os
 
 setup(
     name='django-shop-configurableproduct',
-    version='0.2.4',
+    version='0.2.5',
     packages=find_packages(),
     install_requires=[
         'sorl-thumbnail',
@@ -16,6 +16,7 @@ setup(
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     license='GPL',
     keywords='django-shop, product',
-    url='http://bitbucket.org/zeus/configurableproduct'
+    url='http://bitbucket.org/zeus/configurableproduct',
+    include_package_data=True,
 )
 
