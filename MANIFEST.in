@@ -1,2 +1,2 @@
-recursive-include configrableproduct/locale *
+recursive-include configurableproduct/locale *
 include README.rst
