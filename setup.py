@@ -1,10 +1,11 @@
 from setuptools import setup
+from setuptools import find_packages
 import os
 
 setup(
     name='django-shop-configurableproduct',
-    version='0.2.2',
-    packages=['configurableproduct'],
+    version='0.2.4',
+    packages=find_packages(),
     install_requires=[
         'sorl-thumbnail',
         'django-shop',
