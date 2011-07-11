@@ -18,7 +18,7 @@ from django.conf import settings
 class ProductCharInline(admin.TabularInline):
     model = ProductChar
     extra = 0
-    can_delete = False
+    can_delete = True
     fieldsets = [
             ['', {'fields': ['field', 'value', 'order']}]
     ]
