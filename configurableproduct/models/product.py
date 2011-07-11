@@ -4,16 +4,15 @@
 __author__ = 'zeus'
 
 from django.db import models
-from shop.models import Product
+from shop.models.defaults.product import Product
 from django.utils.translation import ugettext_lazy as _
-
 from fields.image_field import ProductImage
 
 
 class CProduct(Product):
-    '''
-        A configurable product class, has m2m relations to text, float and boolean fields
-    '''
+    """
+    A configurable product class, has m2m relations to text, float and boolean fields
+    """
     class Meta(object):
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
