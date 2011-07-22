@@ -18,11 +18,28 @@ class ProductAbstractField(models.Model):
     def __unicode__(self):
         return self.name
 
-class ProductAbstractFieldThrough(models.Model):
+
+class BasicThroughField(models.Model):
+    class Meta(object):
+        abstract = True
+
+    order = models.IntegerField(default=0, verbose_name=_('Ordering'))
+
+
+class ProductAbstractFieldThrough(BasicThroughField):
     class Meta(object):
         abstract = True
         ordering = ['order']
         app_label = 'configurableproduct'
 
     product = models.ForeignKey('configurableproduct.CProduct')
-    order = models.IntegerField(default=0, verbose_name=_('Ordering'))
+
+
+
+class TypeAbstractFieldTrhough(BasicThroughField):
+    class Meta(object):
+        abstract = True
+        ordering = ['order']
+        app_label = 'configurableprodcut'
+
+    type = models.ForeignKey('configurableproduct.ProductType')

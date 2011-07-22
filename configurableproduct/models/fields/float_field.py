@@ -21,3 +21,12 @@ class ProductFloat(ProductAbstractFieldThrough):
 
     value = models.FloatField(verbose_name=_('Value'), default=None, null=True, blank=True)
     field = models.ForeignKey(ProductFloatField, verbose_name=_('Field'))
+    
+
+class TypeFloat(TypeAbstractFieldTrhough):
+    class Meta(TypeAbstractFieldTrhough.Meta):
+        verbose_name = _('Float field')
+        verbose_name_plural = _('Float fields')
+        app_label = 'configurableproduct'
+
+    field = models.ForeignKey(ProductFloatField, verbose_name=_('Field'))

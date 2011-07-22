@@ -3,7 +3,7 @@
 
 __author__ = 'zeus'
 
-from boolean_field import ProductBoolean, ProductBooleanField
-from char_field import ProductChar, ProductCharField
-from float_field import ProductFloatField, ProductFloat
-from image_field import ProductImageField, ProductImage
+from boolean_field import ProductBoolean, ProductBooleanField, TypeBoolean
+from char_field import ProductChar, ProductCharField, TypeChar
+from float_field import ProductFloatField, ProductFloat, TypeFloat
+from image_field import ProductImageField, ProductImage, TypeImage

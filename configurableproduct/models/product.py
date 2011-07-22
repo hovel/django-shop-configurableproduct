@@ -25,21 +25,21 @@ class CProduct(Product):
     image_fields = models.ManyToManyField('ProductImageField', through=ProductImage)
 
     product_fields = [
-            'char_fields',
-            'float_fields',
-            'boolean_fields',
-            'image_fields'
+            ('char_fields', 'typechar_set'),
+            ('float_fields', 'typefloat_set'),
+            ('boolean_fields', 'typeboolean_set'),
+            ('image_fields', 'typeimage_set')
     ]
 
     def save(self, *args, **kwargs):
         super(CProduct, self).save(*args, **kwargs)
         # Create relation for each field in product type
         for field_type in self.product_fields:
-            self_field = getattr(self, field_type)
-            type_field = getattr(self.type, field_type)
+            self_field = getattr(self, field_type[0])
+            type_field = getattr(self.type, field_type[1])
             for tf in type_field.all():
-                if not self_field.through.objects.filter(field=tf, product=self).count():
-                    pt = self_field.through(product=self, field=tf)
+                if not self_field.through.objects.filter(field=tf.field, product=self).count():
+                    pt = self_field.through(product=self, field=tf.field, order=tf.order)
                     pt.save()
 
     @property

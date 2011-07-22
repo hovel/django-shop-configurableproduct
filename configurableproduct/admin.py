@@ -10,6 +10,7 @@ from models import ProductCharField, ProductChar
 from models import ProductBooleanField, ProductBoolean
 from models import ProductFloatField, ProductFloat
 from models import ProductImageField, ProductImage
+from models import TypeImage, TypeBoolean, TypeChar, TypeFloat
 from sorl.thumbnail.admin.current import AdminImageWidget
 from sorl.thumbnail.fields import ImageField
 from django.conf import settings
@@ -39,15 +40,6 @@ class ProductImageInline(ProductCharInline):
     }
 
 
-class ProductTypeAdmin(admin.ModelAdmin):
-    fieldsets = (
-    ('', {'fields': ['name', 'char_fields', 'float_fields', 'boolean_fields', 'image_fields']}),
-    )
-    list_per_page = 100
-    list_display = ('name',)
-    search_fields = ('name',)
-
-
 class CProductAdmin(admin.ModelAdmin):
     fieldsets = (
     ('', {'fields': ['type', 'name', 'slug', 'active']}),
@@ -59,7 +51,37 @@ admin.site.register(ProductCharField)
 admin.site.register(ProductBooleanField)
 admin.site.register(ProductFloatField)
 admin.site.register(ProductImageField)
+
+
+class TypeBooleanAdmin(admin.TabularInline):
+    model = TypeBoolean
+    extra = 0
+    can_delete = True
+    fieldsets = [
+        ['', {'fields': ['field', 'order']}]
+    ]
+
+class TypeCharAdmin(TypeBooleanAdmin):
+    model = TypeChar
+
+class TypeFloatAdmin(TypeBooleanAdmin):
+    model = TypeFloat
+
+class TypeImageAdmin(TypeBooleanAdmin):
+    model = TypeImage
+
+class ProductTypeAdmin(admin.ModelAdmin):
+    fieldsets = (
+    ('', {'fields': ['name']}),
+    )
+    list_per_page = 100
+    list_display = ('name',)
+    search_fields = ('name',)
+    inlines = [TypeCharAdmin, TypeBooleanAdmin, TypeFloatAdmin, TypeImageAdmin]
+
+
 admin.site.register(ProductType, ProductTypeAdmin)
+
 
 if getattr(settings, 'ENABLE_CPRODUCT_ADMIN', False):
     admin.site.register(CProduct, CProductAdmin)

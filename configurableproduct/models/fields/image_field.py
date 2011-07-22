@@ -46,3 +46,12 @@ class ProductImage(ProductAbstractFieldThrough):
 
     admin_thumbnail.short_description = _('Thumbnail')
     admin_thumbnail.allow_tags = True
+
+
+class TypeImage(TypeAbstractFieldTrhough):
+    class Meta(TypeAbstractFieldTrhough.Meta):
+        verbose_name = _('Image field')
+        verbose_name_plural = _('Image fields')
+        app_label = 'configurableproduct'
+
+    field = models.ForeignKey(ProductImageField, verbose_name=_('Field'))

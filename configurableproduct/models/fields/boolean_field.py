@@ -12,6 +12,7 @@ class ProductBooleanField(ProductAbstractField):
         verbose_name_plural = _('Product fields - boolean')
         app_label = 'configurableproduct'
 
+
 class ProductBoolean(ProductAbstractFieldThrough):
     class Meta(ProductAbstractFieldThrough.Meta):
         verbose_name = _('Boolean field')
@@ -19,4 +20,13 @@ class ProductBoolean(ProductAbstractFieldThrough):
         app_label = 'configurableproduct'
 
     value = models.NullBooleanField(verbose_name=_('Value'), default=None, null=True, blank=True)
+    field = models.ForeignKey(ProductBooleanField, verbose_name=_('Field'))
+
+
+class TypeBoolean(TypeAbstractFieldTrhough):
+    class Meta(TypeAbstractFieldTrhough.Meta):
+        verbose_name = _('Boolean field')
+        verbose_name_plural = _('Boolean fields')
+        app_label = 'configurableproduct'
+
     field = models.ForeignKey(ProductBooleanField, verbose_name=_('Field'))
