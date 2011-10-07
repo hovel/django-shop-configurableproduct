@@ -42,7 +42,7 @@ class ProductImageInline(ProductCharInline):
 
 class CProductAdmin(admin.ModelAdmin):
     fieldsets = (
-    ('', {'fields': ['type', 'name', 'slug', 'active']}),
+    ('', {'fields': ['type', 'unit_price', 'name', 'slug', 'active']}),
     )
     inlines = [ProductCharInline, ProductBooleanInline, ProductFloatInline, ProductImageInline]
     prepopulated_fields = {'slug': ['name']}
