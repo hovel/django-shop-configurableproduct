@@ -18,7 +18,7 @@ class CProduct(Product):
         verbose_name_plural = _('Products')
         app_label = 'configurableproduct'
 
-    type = models.ForeignKey('ProductType', verbose_name=_('Type'), null=False, blank=False)
+    type = models.ForeignKey('ProductType', related_name="products", verbose_name=_('Type'), null=False, blank=False)
     char_fields = models.ManyToManyField('ProductCharField', through='ProductChar')
     float_fields = models.ManyToManyField('ProductFloatField', through='ProductFloat')
     boolean_fields = models.ManyToManyField('ProductBooleanField', through='ProductBoolean')
